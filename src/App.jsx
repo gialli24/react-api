@@ -3,7 +3,7 @@ import './App.css'
 
 function App() {
 
-  const endpoint = "https://lanciweb.github.io/demo/api/actors/";
+  const actorsEndpoint = "https://lanciweb.github.io/demo/api/actors/";
 
   const [actors, setActors] = useState([]);
 
@@ -11,17 +11,17 @@ function App() {
    * 
    * @param {string} endpoint 
    */
-  function fetchActors(endpoint) {
+  function fetchData(endpoint, setValue) {
     fetch(endpoint)
       .then(response => response.json())
       .then(data => {
-        setActors(data);
+        setValue(data);
       })
       .catch(error => console.log("Errore: " + error))
   }
 
   useEffect(() => {
-    fetchActors(endpoint);
+    fetchData(actorsEndpoint, setActors);
   }, [])
 
   return (
