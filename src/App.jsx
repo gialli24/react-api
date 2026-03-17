@@ -27,13 +27,28 @@ function App() {
   return (
     <>
       <main id="app-main">
-        <ul>
+        <section id='actors'>
           {
             actors.map((actor, i) => (
-              <li key={i}>{actor.name}</li>
+              <div key={i}>
+                <img src={actor.image} alt={`${actor.name} photo`} />
+                <h2>{actor.name}</h2>
+                <div>
+                  <span>{actor.birth_year}</span>
+                  <span>{actor.nationality}</span>
+                </div>
+                <p>{actor.biography}</p>
+                <div>
+                  <ul>
+                    {actor.awards.map((award, i) => (
+                      <li key={i}>{award}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             ))
           }
-        </ul>
+        </section>
       </main>
     </>
   )
