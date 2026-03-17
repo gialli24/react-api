@@ -1,7 +1,7 @@
 @import url('bootstrap');
 
 .bg-card-overlay {
-  background: linear-gradient(0deg, rgba(30, 30, 30, 0.7) 30%, rgba(30, 30, 30, 0) 100%);
+  background: linear-gradient(0deg, rgba(30, 30, 30, 0.7) 50%, rgba(30, 30, 30, 0) 100%);
 }
 
 .actor-card {

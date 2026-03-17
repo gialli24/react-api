@@ -1,5 +1,6 @@
 import { act, useEffect, useState } from 'react';
 import './App.css'
+import AppCard from './components/AppCard';
 
 function App() {
 
@@ -39,20 +40,7 @@ function App() {
               {
                 actors.map((actor, i) => (
                   <div key={i} className="col">
-                    <div className="card text-white h-100 rounded-5 actor-card" style={{ backgroundImage: `url(${actor.image})` }}>
-                      <div className="card-body d-flex flex-column justify-content-end p-4 bg-card-overlay">
-                        <div>{actor.birth_year} - {actor.nationality}</div>
-                        <h3 className="card-title">{actor.name}</h3>
-                        <p className="card-text">{actor.biography}</p>
-                        <div className='d-flex flex-wrap gap-4'>
-                          {
-                            actor.awards.map((award, i) => (
-                              <span key={i}>{award}</span>
-                            ))
-                          }
-                        </div>
-                      </div>
-                    </div>
+                    <AppCard image={actor.image} name={actor.name} biography={actor.biography} birth_year={actor.birth_year} nationality={actor.nationality} known_for={actor.known_for} awards={actor.awards} />
                   </div>
                 ))
               }
@@ -69,20 +57,7 @@ function App() {
               {
                 actresses.map((actress, i) => (
                   <div key={i} className="col">
-                    <div className="card text-white h-100 rounded-5 actor-card" style={{ backgroundImage: `url(${actress.image})` }}>
-                      <div className="card-body d-flex flex-column justify-content-end p-4 bg-card-overlay">
-                        <div>{actress.birth_year} - {actress.nationality}</div>
-                        <h3 className="card-title">{actress.name}</h3>
-                        <p className="card-text">{actress.biography}</p>
-                        <div className='d-flex flex-wrap gap-4'>
-                          {
-                            actress.awards.map((award, i) => (
-                              <span key={i}>{award}</span>
-                            ))
-                          }
-                        </div>
-                      </div>
-                    </div>
+                    <AppCard image={actress.image} name={actress.name} biography={actress.biography} birth_year={actress.birth_year} nationality={actress.nationality} known_for={actress.most_famous_movies} awards={actress.awards} />
                   </div>
                 ))
               }
@@ -99,20 +74,7 @@ function App() {
               {
                 actresses.map((actress, i) => (
                   <div key={i} className="col">
-                    <div className="card text-white h-100 rounded-5 actor-card" style={{ backgroundImage: `url(${actress.image})` }}>
-                      <div className="card-body d-flex flex-column justify-content-end p-4 bg-card-overlay">
-                        <div>{actress.birth_year} - {actress.nationality}</div>
-                        <h3 className="card-title">{actress.name}</h3>
-                        <p className="card-text">{actress.biography}</p>
-                        <div className='d-flex flex-wrap gap-4'>
-                          {
-                            actress.awards.map((award, i) => (
-                              <span key={i}>{award}</span>
-                            ))
-                          }
-                        </div>
-                      </div>
-                    </div>
+                    <AppCard image={actress.image} name={actress.name} biography={actress.biography} birth_year={actress.birth_year} nationality={actress.nationality} known_for={actress.most_famous_movies} awards={actress.awards} />
                   </div>
                 ))
               }
@@ -120,20 +82,7 @@ function App() {
               {
                 actors.map((actor, i) => (
                   <div key={i} className="col">
-                    <div className="card text-white h-100 rounded-5 actor-card" style={{ backgroundImage: `url(${actor.image})` }}>
-                      <div className="card-body d-flex flex-column justify-content-end p-4 bg-card-overlay">
-                        <div>{actor.birth_year} - {actor.nationality}</div>
-                        <h3 className="card-title">{actor.name}</h3>
-                        <p className="card-text">{actor.biography}</p>
-                        <div className='d-flex flex-wrap gap-4'>
-                          {
-                            actor.awards.map((award, i) => (
-                              <span key={i}>{award}</span>
-                            ))
-                          }
-                        </div>
-                      </div>
-                    </div>
+                    <AppCard image={actor.image} name={actor.name} biography={actor.biography} birth_year={actor.birth_year} nationality={actor.nationality} known_for={actor.known_for} awards={actor.awards} />
                   </div>
                 ))
               }
