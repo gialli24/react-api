@@ -28,28 +28,32 @@ function App() {
     <>
       <main id="app-main">
         <section id='actors'>
-          {
-            actors.map((actor, i) => (
-              <div key={i}>
-                <img src={actor.image} alt={`${actor.name} photo`} />
-                <h2>{actor.name}</h2>
-                <div>
-                  <span>{actor.birth_year}</span>
-                  <span>{actor.nationality}</span>
-                </div>
-                <p>{actor.biography}</p>
-                <div>
-                  <ul>
-                    {actor.awards.map((award, i) => (
-                      <li key={i}>{award}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))
-          }
+          <div className="container">
+            <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3">
+              {
+                actors.map((actor, i) => (
+                  <div key={i} className="col p-4">
+                    <div className="card text-white h-100 rounded-4 actor-card" style={{ backgroundImage: `url(${actor.image})` }}>
+                      <div className="card-body d-flex flex-column justify-content-end p-4 bg-card-overlay">
+                        <div>{actor.birth_year} - {actor.nationality}</div>
+                        <h3 className="card-title">{actor.name}</h3>
+                        <p className="card-text">{actor.biography}</p>
+                        <div className='d-flex flex-wrap gap-4'>
+                          {
+                            actor.awards.map((award, i) => (
+                              <span key={i}>{award}</span>
+                            ))
+                          }
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
         </section>
-      </main>
+      </main >
     </>
   )
 }

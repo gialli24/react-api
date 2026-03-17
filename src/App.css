@@ -1,0 +1,15 @@
+@import url('bootstrap');
+
+.bg-card-overlay {
+  background: linear-gradient(0deg, rgba(30, 30, 30, 0.7) 30%, rgba(30, 30, 30, 0) 100%);
+}
+
+.actor-card {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  min-height: 450px;
+
+  overflow: hidden;
+}
